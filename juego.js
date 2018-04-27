@@ -18,7 +18,7 @@ var bananas2 = 1
 var botetlla1 = 1
 var botetlla2 = 1
 var vida = 3
-var mundo = 3
+var mundo = 3   
 var mundo33 = true
 var librobolando = 3;
 var librobolando1 = 3;
@@ -85,7 +85,7 @@ function inicio()
     fondo4.onload = confirmarfondo;
 
     hh.imagen = new Image();
-    hh.imagen.src = "fondo.png";
+    hh.imagen.src = "fondo.pngs";
     hh.imagen.onload =confirmarfondo2;
  
     mala.malas = new Image();
@@ -160,7 +160,9 @@ function inicio()
     libroteca.src = "girl-160172_640.png";
     libroteca.onload = confirmarfondo2;
 
-
+    canecaaaa = new Image();
+    canecaaaa.src = "liz.png";
+    canecaaaa.onload = confirmarmaldad;
 
     var m = document.getElementById("mover");
     //m.addEventListener("click", movimiento)
@@ -225,13 +227,13 @@ function confirmarfondo2()
     {         
     if (mundo == 3) {
         if (andrea.x >= 430 && andrea.y >= 400){
-            if (bananas1 == 3 && bananas2 == 3 && botetlla1 == 3 && botetlla2 == 3) {
+           if (bananas1 == 3 && bananas2 == 3 && botetlla1 == 3 && botetlla2 == 3) {
                 alert("haz ayudado al planeta un poquitico");
                 mundo2();
             }
      
         if (bananas1 == 0) {
-            bananas1 = 3             
+            bananas1 = 3
         }
         if (bananas2 == 0) {
             bananas2 = 3
@@ -250,11 +252,11 @@ function confirmarfondo2()
             mundo3();
     };    
     }
+    dibujar()
     }
     //carga dondos del mundo 3 y activa condicional de obstaculos
 function confirmarfondo3()
     {
-         
         if ( andrea.x >= 430 && andrea.y <= 40  ) {
         alert("haz ganado");
         fondo.imagen = jj.imagen;
@@ -263,6 +265,7 @@ function confirmarfondo3()
         mala.x =70;
         mala.y = 0;
         dibujar();}
+
     }
 function confirmarfrente()
     {
@@ -307,7 +310,7 @@ location.reload();
 
 }
 function dibujar(){
-       console.log(andrea.x,andrea.y);
+
     if (mundo == 3) {
      if(fondo.imagenOK) 
         if (andrea.x == carrox && andrea.y == 40 || andrea.x == carrox && andrea.y == 20) {
@@ -337,9 +340,7 @@ function dibujar(){
         if (andrea.x == 200 && andrea.y == 260) {
             botetlla2 = 0
         }
-        if (bananas1 == 0 && bananas2 == 0 && botetlla1 == 0 &&  botetlla2 == 0 && andrea.x == 420 && andrea.y == 440) {
-            mundo2();
-        }; 
+
 
     helado.drawImage(fondo.imagen, 0, 0);
 // carretera arriba 
@@ -396,6 +397,11 @@ function dibujar(){
 
 ////todo nivel 3
     if (mundo == 1) {
+        if (bananas1 == 4 && bananas2 == 4 && botetlla1 == 4 && botetlla2 == 4 &&  libb3 == 3 && libb4 == 3 && libb5 == 3 ) {
+            alert("haz ganado tines el potencial de salvar el mundo")
+            location.reload();
+        }
+
      if(fondo.imagenOK)
         if (andrea.x == carrox && andrea.y == 40 || andrea.x == carrox && andrea.y == 20) {
             prdiste()
@@ -424,21 +430,58 @@ function dibujar(){
         if (andrea.x == 200 && andrea.y == 260) {
             botetlla2 = 0
         }
-        if (andrea.x == 200 && andrea.y == 260) {
-            botetlla2 = 0
-        }
         if (andrea.x == 200 && andrea.y == 0 || andrea.x == 220 && andrea.y == 0) {
-            libb5 =0;
+            if (libb5 == 3) {
+
+            }else{
+                libb5 =0;                
+            }
         }
         if (andrea.x == 200 && andrea.y == 160 || andrea.x == 220 && andrea.y == 160) {
-            libb4 =0;
+            if (libb4 == 3) {
+
+            }else{
+                libb4 =0;                
+            }
         }
-        if (andrea.x == 210 && andrea.y == 370 || andrea.x == 210 && andrea.y == 370) {
-            libb3 =0;
+        if (andrea.x == 200 && andrea.y == 340 || andrea.x == 220 && andrea.y == 340) {
+            if (libb3 == 3) {
+
+            }else{
+                libb3 =0;                
+            }
+
         }
-        if (bananas1 == 0 && bananas2 == 0 && botetlla1 == 0 &&  botetlla2 == 0 && andrea.x == 420 && andrea.y == 440) {
-            mundo2();
+        if (andrea.x == 460 && andrea.y == 440 || andrea.x == 440 && andrea.y == 440 || andrea.x == 440 && andrea.y == 440 || andrea.x == 460 && andrea.y == 400|| andrea.x == 440 && andrea.y == 400|| andrea.x == 460 && andrea.y == 400) {
+              if (botetlla2 == 0) {
+                botetlla2 = 4            }
+            if (botetlla1 == 0) {
+                botetlla1 = 4            }
+            if (bananas2 == 0) {
+                bananas2 = 4            } 
+            if (bananas1 == 0) {
+                bananas1 = 4            }
+            if (libb3 == 0 || libb4 == 0 || libb5 == 0 ) {
+               prdiste()
+            }
         }; 
+        if (andrea.x == 0 && andrea.y == 440 || andrea.x == 20 && andrea.y == 440 || andrea.x == 40 && andrea.y == 440 || andrea.x == 0 && andrea.y == 400|| andrea.x == 20 && andrea.y == 400|| andrea.x == 40 && andrea.y == 400) {
+            if (libb3 == 0) {
+                libb3 = 3            }
+            if (libb4 == 0) {
+                libb4 = 3            }
+            if (libb5 == 0) {
+                libb5 = 3            } 
+            if (libb3 == 0) {
+                libb3 = 3            }
+            if (bananas1 == 0 || bananas2 == 0 || botetlla1 == 0 || botetlla2 == 0) {
+               prdiste()
+            }
+
+
+
+        }
+
 
     helado.drawImage(fondo.imagen, 0, 0);
 // carretera arriba 
@@ -455,7 +498,6 @@ function dibujar(){
     helado.drawImage(cc.imagen,400,240,100,100 );
    //caneca
     helado.drawImage(libroteca,0 ,400,70,100 );
-    helado.drawImage(mala.malas, mala.x, mala.y, 70,70);
     //dibuha basura
  
     if (bananas1 == 1) {
@@ -511,7 +553,7 @@ function dibujar(){
     helado.drawImage(carro2 ,carroy ,110,105,70 );
     helado.drawImage(carro3 ,carrox ,240,105,70 );
     helado.drawImage(carro4 ,carroy ,290,105,70 );
-    
+    helado.drawImage(canecaaaa,460 ,460 , 70,70);
      }
 
 
@@ -546,12 +588,8 @@ function dibujar(){
                 andrea.y = 440
                 mundo33 = false
                 mala.x= 501
-                mala.y=501
+                mala.y=501  
                 };
-            
-
-
-        
 
      var sss = document.getElementById("progress").value = progresss;
     };
@@ -619,6 +657,10 @@ function mundo2(){
     mundo = 2
 }
 function mundo3(){
+    bananas1 = 1
+    bananas2 = 1
+    botetlla1 = 1
+    botetlla2 = 1
     teclas.UP = 38
     teclas.DOWN = 40 
     var ss = document.getElementById('progress').style.display = "none";
@@ -632,7 +674,7 @@ function mundo3(){
             anim()
         }else{
             carrox -= 4;
-            setTimeout(anim, 10);
+            setTimeout(anim, 25);
             dibujar()
         }
         }
@@ -644,15 +686,16 @@ function mundo3(){
             anim2()
         }else{
             carroy += 4;
-            setTimeout(anim2, 10);
+            setTimeout(anim2, 25);
             dibujar()
         }
     }
+
         function anim3() {
+        if (mundo == 2) {
         if (libroy == 500) {
             libroy = 0;
              progresss = progresss-1
-            console.log(progresss+"3")
             anim3()
         }else if (andrea.x == 0 && andrea.y <= libroy+20 || andrea.x == 20 && andrea.y <= libroy+20 ) {
             progresss+=1
@@ -668,14 +711,18 @@ function mundo3(){
             dibujar()
         }
         }
+        }else if(mundo == 1){
+            setTimeout(anim3, 100000000);            
+        }else {
+            setTimeout(anim3, 100);
+        }
         }
 
         function anim4() {
-            if (mundo == 2) {
+        if (mundo == 2) {
         if (libroy1 == 500) {
             libroy1 = 0;
             progresss = progresss-1
-            console.log(progresss+"4")
             anim4()
         }else if (andrea.x == 300 && andrea.y <= libroy1+20 || andrea.x == 320 && andrea.y <= libroy1+20 ) {
              progresss+=1
@@ -684,20 +731,23 @@ function mundo3(){
             cambio4()
 
         }else{
-                        if (progresss == 10) {
+            if (progresss == 10) {
                 mundo3()
             }else{
             libroy1 += 4;
             setTimeout(anim4, 20);
             dibujar()}
-        }}
+        }}else if(mundo == 1){
+            setTimeout(anim4, 100000000);            
+        }else {
+            setTimeout(anim4, 100);
+        }
         }
         function anim5() {
         if (mundo == 2) {
         if (libroy2 == 500 ) {
             libroy2 = 0;
              progresss = progresss-1
-             console.log(progresss+"5")
             anim5()
         }else if (andrea.x == 400 && andrea.y <= libroy2+20 || andrea.x == 420 && andrea.y <= libroy2+20 ) {
              progresss+=1
@@ -706,20 +756,23 @@ function mundo3(){
             cambio5()
         }
         else{
-                        if (progresss == 10) {
+            if (progresss == 10) {
                 mundo3()
             }else{
             libroy2 += 4;
             setTimeout(anim5, 22);
             dibujar()}
         }
+        }else if(mundo == 1){
+            setTimeout(anim5, 100000000);            
+        }else {
+            setTimeout(anim5, 100);
         }}
         function anim6() {
-            if (mundo == 2) {
+        if (mundo == 2) {
         if (libroy3 == 500) {
             libroy3 = 0;
             progresss = progresss-1
-             console.log(progresss+"6")
             anim6()
         }else if (andrea.x == 200 && andrea.y <= libroy3+20 || andrea.x == 220 && andrea.y <= libroy3+20 ) {
              progresss+=1  
@@ -736,13 +789,16 @@ function mundo3(){
             dibujar()
         }
         }
+        }else if(mundo == 1){
+            setTimeout(anim6, 100000000);            
+        }else {
+            setTimeout(anim6, 100);
         }}
         function cambio3() {
             if (mundo == 2) {
         if (librobolando == 2 ) {
             librobolando = 3;
             libroy = 0
-            console.log(progresss+" 5")
             anim3()
         }}}
         function cambio4() {
@@ -750,7 +806,6 @@ function mundo3(){
         if (librobolando1 == 2 ) {
             librobolando1 = 3;
             libroy1 = 0
-            console.log(progresss+" 5")
             anim4()
         }}}
         function cambio5() {
@@ -758,7 +813,6 @@ function mundo3(){
         if (librobolando2 == 2 ) {
             librobolando2 = 3;
             libroy2 = 0
-            console.log(progresss+" 5")
             anim5()
         }}}
         function cambio6() {
@@ -766,7 +820,6 @@ function mundo3(){
         if (librobolando3 == 2 ) {
             librobolando3 = 3;
             libroy3 = 0
-            console.log(progresss+" 6")
             anim6()
         }}}
 
