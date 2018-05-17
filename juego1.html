@@ -3,17 +3,24 @@
 	<head>
 	<meta charset="utf-8"/>
 	<title>Juego XD</title>
-	<style type="text/css">
+	<style t()ype="text/css">
 	body
 	{
 		background-color: black;
 		color:White;
 		text-align: center;
+
 	}	
+	input{
+		width: 100px;
+		height: 100px;
+		font-size: 250%;
+	}
 	</style>
 	<script type="text/javascript" src = "juego.js"></script>
 	</head>
 	<body>
+	<div>
 		<p><canvas width=	"500" height="500" id="dibujito"></canvas></p>
 		<p>Mueve a Diana para alcanzar a su amiga liz</p>
 		<script type="text/javascript">
@@ -22,6 +29,17 @@
 		<script type="text/javascript">
 		inicio();
 		</script>
+	</div>	
+	<div>
 		<progress id="progress" value="10" max="10" style="display: none; margin-left: 43% ">
+	</div>
+	<div>
+	<div>		
+		<input type="button" name="top" value="▲" onclick="ftop()"></input>
+	</div>
+		<input type="button" name="iz" value="◅" onclick="fizquierda()"></input>
+		<input type="button" name="down" value="▼" onclick="fdwn()"></input>
+		<input type="button" name="de" value="▻" onclick="fderecha()"></input>
+	</div>
 	</body>
 </html>

@@ -30,6 +30,8 @@ var libb2 = 1
 var libb3 = 1
 var libb4 = 1
 var libb5 = 1
+var comandos = 0
+var comandos1 = 0
 //opstaculos del nivel 2 [x,y]
 var barras = 0//varialbs carga de imagenes
 /*/var alterna = {
@@ -166,15 +168,49 @@ function inicio()
 
     var m = document.getElementById("mover");
     //m.addEventListener("click", movimiento)
-    document.addEventListener("keydown", teclado);
+    document.addEventListener("keydown", tecl);
 }
 
-
+ 
 
 //function add(){num++; if(num==5) {dibujar()}}
+function fderecha(){
+comandos1 = 39
+teclado();
+};
+function fizquierda(){
+comandos1 = 37
+teclado();
+};
+
+function ftop(){
+comandos1 = 38
+teclado();
+};
+
+function fdwn(){
+comandos1 = 40
+teclado();
+};
+function tecl(datos){
+    comandos1 = datos.keyCode
+    teclado();
+}
+
+ var codigo
 function teclado(datos)
 { 
-    var codigo = datos.keyCode;
+    if (comandos1 == 37 ) {
+        codigo = 37;
+    }else if (comandos1 == 38 ) {
+     codigo = 38;
+    }else     if (comandos1 == 39 ) {
+     codigo = 39;
+    }else     if (comandos1 == 40 ) {
+     codigo = 40;
+    }else {
+        console.log("error")
+    }
     var xAnt = andrea.x;
     var yAnt = andrea.y;
     var xAnta = andrea.x;
@@ -296,6 +332,19 @@ function confirmarizq()
  
 function prdiste(){
 
+if (mundo == 2) {
+andrea.x =20
+andrea.y =440
+bananas1 = 1 
+bananas2 = 1
+botetlla1 = 1
+botetlla2 = 1 
+vida = vida -1
+    if (vida == -1) {
+    alert("has perdido")
+    location.reload();
+    };
+}else{
 andrea.x =0
 andrea.y =0
 bananas1 = 1 
@@ -304,11 +353,10 @@ botetlla1 = 1
 botetlla2 = 1 
 vida = vida -1
 if (vida == -1) {
-    alert("haz perdido")
-location.reload();
-};
-
+alert("has perdido")
+location.reload();    
 }
+}}  
 function dibujar(){
 
     if (mundo == 3) {
@@ -566,7 +614,7 @@ function dibujar(){
 
 
         var ss = document.getElementById('progress').style.display = "block";
-        helado.drawImage(fondo4, 0, 0);  
+        helado.drawImage(fondo4, 0, 0, );  
 
             if (librobolando == 3) {
                 helado.drawImage(libro,0,libroy,50,30 );
